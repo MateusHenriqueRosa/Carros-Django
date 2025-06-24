@@ -11,7 +11,7 @@ __pycache__/
 *.pyc
 *.pyo
 db.sqlite3
-media/
+# media/
 staticfiles/
 
 # Virtual environment
