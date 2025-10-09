@@ -45,7 +45,7 @@ class CarUpdateView(UpdateView):
     template_name = "car_update.html"
 
     def get_success_url(self):
-        return reverse_lazy("car_detall", kwargs={"pk": self.object.pk})
+        return reverse_lazy("car_detail", kwargs={"pk": self.object.pk})
 
 
 @method_decorator(login_required(login_url="login"), name="dispatch")
