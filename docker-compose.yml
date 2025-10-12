@@ -1,0 +1,22 @@
+services:
+  carros_web:
+    build: .
+    restart: always
+    ports:
+    - 8000:8000
+    depends_on:
+      - carros_db
+
+  carros_db:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: carrosdjango
+
+volumes:
+  postgres_data:
